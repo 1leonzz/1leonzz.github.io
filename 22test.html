@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navbar</title>
+<style>
+    /* Estilo geral da navbar */
+    #nav {
+        background-color: #333;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    /* Estilo para o botão de hamburger */
+    #hamburger {
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        display: none;
+    }
+
+    /* Estilo para a lista de menu */
+    #menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    #menu li {
+        margin-bottom: 10px;
+    }
+
+    #menu li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* Estilo para telas menores que 600px */
+    @media screen and (max-width: 600px) {
+        #hamburger {
+            display: inline-block;
+        }
+
+        #menu {
+            display: none;
+            text-align: left;
+        }
+
+        #menu.active {
+            display: block;
+            text-align: center;
+    
+        }
+
+        #menu.active li {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+</head>
+<body>
+<nav id="nav">
+    <button id="btn-mobile" aria-label="Menu">
+        <span id="hamburger">&#9776;</span>
+    </button>
+    <ul id="menu">
+        <li><a href="/">Sobre</a></li>
+        <li><a href="/">Contato</a></li>
+        <li><a href="/">Ajuda</a></li>
+    </ul>
+</nav>
+<script>
+    const btnMobile = document.getElementById('btn-mobile');
+    const menu = document.getElementById('menu');
+
+    btnMobile.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
